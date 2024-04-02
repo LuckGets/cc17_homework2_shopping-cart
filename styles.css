@@ -7,10 +7,12 @@
   
   --color-body-gray: rgb(248, 248, 248);
   --color-light-gray: rgb(230, 230, 230);
-  --color-med-gray: rgb(128, 128, 128);
-  --color-black-gray: rgba(46, 46, 46, 0.881);
+  --color-med-gray: rgba(0, 0, 0, 0.406);
+  --color-black-gray: rgba(0, 0, 0, 0.926);
   --color-aquagreen: #72cbbc;
+  --color-aqua: #00ddb5;
   --color-blue: #4285F4;
+  --color-blue-gray: #daf3fa;
   --color-orange: #ffc038;
 }
 
@@ -44,6 +46,7 @@ body {
   align-items: center;
   margin-right: .5em;
   margin-bottom: .3em;
+  cursor: pointer;
 }
 
 .title-img img {
@@ -53,6 +56,10 @@ body {
 .text-accent {
   color: var(--color-black-gray);
   font-weight: bold;
+}
+
+.login-nav {
+  border-right: 1px solid var(--color-light-gray);
 }
 
 /*----------LAYOUT-----------*/
@@ -75,6 +82,12 @@ main {
   flex-direction: column;
   width: 100%;
   min-height: 90vh;
+}
+
+.my-cart {
+  width: 80%;
+  font-size: 2.6rem;
+  padding-bottom: 1em;
 }
 
 .container {
@@ -123,7 +136,6 @@ header a {
 .main-part {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
 }
 
 /* --------left-side------ */
@@ -139,7 +151,8 @@ header a {
 }
 
 .left-side {
-  margin-right: 2em;
+  margin-right: 3em;
+  width: 50%;
 }
 
 .class-select-container {
@@ -153,13 +166,16 @@ header a {
 
 .level-indicatior-circle {
   display: inline;
-  /* width: 100%; */
   max-width: 12px;
   max-height: 12px;
-  background-color: var(--color-aquagreen);
+  background-color: var(--color-blue-gray);
   color: transparent;
   border-radius: 50%;
   margin-right: .2em;
+}
+
+.selected {
+  background-color: var(--color-aqua);
 }
 
 .select-level  {
@@ -175,6 +191,7 @@ header a {
   width: .5px;
   position: absolute;
   right: 1em;
+  top: 15px;
   border: 1px solid var(--color-black-gray);
   /* border-width: 0 3px 3px 0; */
   padding: .2em;
@@ -187,7 +204,7 @@ header a {
   cursor: pointer;
   appearance: none;
   font-weight: bold;
-  font-size: .95rem;
+  font-size: 1rem;
   color: var(--color-med-gray);
   width: 90px;
   padding-block: .4em;
@@ -198,7 +215,7 @@ header a {
 }
 
 .select-level select:focus {
-  border: 1px solid var(--color-aquagreen);
+  border: 1px solid var(--color-aqua);
 }
 
 .cost {
@@ -211,13 +228,18 @@ header a {
   border: 1px solid var(--color-light-gray);
   border-radius: 1em;
   padding: 2em;
-  width: 40%;
+  width: 50%;
 }
+
+.right-side h3 {
+  font-size: 1.5rem;
+}
+
 .promo-row {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--color-light-gray);
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 }
 
 .promo-row svg {
@@ -227,16 +249,16 @@ header a {
 .promo-cost {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .promo-cost p {
-  font-weight: bold;
-  color: rgba(104, 103, 103, 0.827);
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.695);
 }
 
 .promo-cost-span {
-  font-weight: bold;
+  font-size: 1.2rem;
   color: var(--color-med-gray);
 }
 
@@ -247,9 +269,13 @@ header a {
   color: var(--color-light-gray);
   padding: 1em;
   padding-right: 3em;
+  margin-inline: .8em;
+  flex: 1 60%;
 }
 
 .promo-row button {
+  font-weight: bold;
+  font-size: 1rem;
   color: var(--color-aquagreen);
   padding: 1em;
   padding-inline: 3.3em;
@@ -270,25 +296,30 @@ header a {
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5em;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
 }
 
 
 .payment-cost span {
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: var(--color-aquagreen);
   font-weight: bold;
 }
 
 .login-button {
   font-weight: bold;
-  padding-block: .8em;
+  font-size: 1.2rem;
+  padding-block: 1em;
   width: 100%;
   color: black;
-  background-color: var(--color-aquagreen);
+  background-color: var(--color-aqua);
   text-align: center;
   border: none;
-  border-radius: 1.4em;
+  border-radius: 1em;
   margin-top: 1.5em;
+  box-shadow: 2px 4px 12px -3px var(--color-aqua);
+  ;
 }
 
 /* ---------ICON-------------- */
@@ -326,7 +357,7 @@ header a {
 .background {
   width: 200px;
   height: 200px;
-  background-color: var(--color-blue);
+  background: linear-gradient(45deg, rgba(77,157,249,1) 40%, rgba(124,183,251,1) 61%, rgba(77,157,249,1) 87%);
   border-radius: 1.5em;
   padding-block: 1.4rem ;
   padding-inline: 1em;
@@ -341,7 +372,7 @@ header a {
 }
 
 .google-slides {
-  background-color: var(--color-orange);
+  background: linear-gradient(45deg, rgba(237,148,93,1) 27%, rgba(243,182,68,1) 75%, rgba(237,148,93,1) 100%);
 }
 
 .cost {
